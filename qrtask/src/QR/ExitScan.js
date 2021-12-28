@@ -1,10 +1,27 @@
 import React from "react";
+import login from "../images/login.png";
+import LogEntryScanHead from "../images/LogEntryScanHead.png";
 
 const ExitScan = () => {
   return (
     <div>
-      <div>header</div>
-      <div>camera</div>
+      <div className="bg-blue-color header-shape px-8 pt-2 h-72 shadow-2xl">
+        <div className="flex justify-between items-center">
+          <div className="w-10">
+            <img src={LogEntryScanHead} alt="*" />
+          </div>
+
+          <p className="text-white text-2xl font-semibold tracking-wide">
+            Log Exit
+          </p>
+
+          <div className="w-40 pt-5">
+            <img src={login} alt="*" />
+          </div>
+        </div>
+      </div>
+
+      <div className="flex justify-center items-center">open camera</div>
     </div>
   );
 };

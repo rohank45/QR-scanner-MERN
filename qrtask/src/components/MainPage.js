@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import mainPageSun from "../images/mainPageSun.png";
 import LogExit from "../images/LogExit.png";
 import LogEntry from "../images/LogEntry.png";
@@ -54,18 +54,30 @@ const MainPage = () => {
       </div>
 
       <div className="flex flex-wrap justify-between items-center text-white mx-12 gap-10 fixed top-48">
-        <div className="okay-btn-bg-color w-28 h-28 rounded-md shadow-2xl flex flex-col justify-center items-center gap-1">
+        <Link
+          to="/scan/entry"
+          className="okay-btn-bg-color w-28 h-28 rounded-md shadow-2xl flex flex-col justify-center items-center gap-1"
+        >
           <img src={LogEntry} alt="a" className="w-10" />
           <p className="font-semibold">Log Entry</p>
-        </div>
-        <div className="okay-btn-bg-color w-28 h-28 rounded-md shadow-2xl flex flex-col justify-center items-center gap-1">
+        </Link>
+
+        <Link
+          to="/scan/exit"
+          className="okay-btn-bg-color w-28 h-28 rounded-md shadow-2xl flex flex-col justify-center items-center gap-1"
+        >
           <img src={LogExit} alt="b" className="w-10" />
           <p className="font-semibold">Log Exit</p>
-        </div>
-        <div className="okay-btn-bg-color w-28 h-28 rounded-md shadow-2xl flex flex-col justify-center items-center gap-1">
+        </Link>
+
+        <Link
+          to="/view/logs"
+          className="okay-btn-bg-color w-28 h-28 rounded-md shadow-2xl flex flex-col justify-center items-center gap-1"
+        >
           <img src={viewLog} alt="c" className="w-10" />
           <p className="font-semibold">View Log</p>
-        </div>
+        </Link>
+
         <div
           onClick={logout}
           className="okay-btn-bg-color w-28 h-28 rounded-md shadow-2xl flex flex-col justify-center items-center gap-1"

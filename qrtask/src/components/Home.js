@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import bgHome from "../images/home.png";
 
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-hidden h-screen">
       <Link to="/auth">
-        <div className="text-5xl h-screen bg-blue-600 text-white cursor-pointer">
-          <div className="bg-blue-800 home-bubble py-20 pl-5 mr-28 tracking-wide">
-            <p className="pt-20 m-1">Simplify</p>
-            <p className="p-2 m-1">Entry</p>
-          </div>
+        <div className="flex flex-col z-50 absolute top-44 left-6 text-6xl text-white font-semibold">
+          <p>Simplify</p>
+          <p>Entry</p>
+        </div>
+
+        <div className="scale-img pl-28 pt-24 bg-blue-color">
+          <img src={bgHome} alt="home" />
         </div>
       </Link>
     </div>

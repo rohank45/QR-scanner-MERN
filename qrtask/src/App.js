@@ -11,6 +11,8 @@ import Login from "./auth/Login";
 import Verification from "./auth/Verification";
 import ErrorPage from "./components/ErrorPage";
 import AuthPage from "./auth/AuthPage";
+import EntryScan from "./QR/EntryScan";
+import ExitScan from "./QR/ExitScan";
 
 const App = () => {
   return (
@@ -22,6 +24,8 @@ const App = () => {
           <Route path="/after/exit" component={AfterExit} exact />
           <Route path="/mainpage" component={MainPage} exact />
           <Route path="/view/logs" component={ViewLogs} exact />
+          <Route path="/scan/entry" component={EntryScan} exact />
+          <Route path="/scan/exit" component={ExitScan} exact />
 
           <Route path="/auth" component={AuthPage} exact />
           <Route path="/register" component={Register} exact />

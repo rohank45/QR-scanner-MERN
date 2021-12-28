@@ -23,6 +23,9 @@ app.use("/", login);
 const logout = require("./routers/logout");
 app.use("/", logout);
 
+const profile = require("./routers/profile");
+app.use("/", profile);
+
 const twilioSetup = require("./routers/twilioSetup");
 app.use("/", twilioSetup);
 

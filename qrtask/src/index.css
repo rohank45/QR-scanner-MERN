@@ -38,3 +38,8 @@
 .main-page-header-shape {
   clip-path: ellipse(75% 61% at 45% 17%);
 }
+
+.scale-img {
+  transform: scale(4, 4);
+  overflow: hidden;
+}

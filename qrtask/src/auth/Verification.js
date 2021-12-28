@@ -56,7 +56,7 @@ const Verification = () => {
         mobile_number: location.state.mobile_number,
       });
 
-      history.push("/");
+      history.push("/mainpage");
     } catch (error) {
       return toast.error(error.response.data.message, {
         position: toast.POSITION.TOP_CENTER,
