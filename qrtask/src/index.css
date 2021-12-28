@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.home-bubble {
+  border-radius: 33% 44% 100% 0% / 0% 51% 54% 0%;
+}
+
+.text-blue-color {
+  color: #3b60e4;
+}
+
+.bg-blue-color {
+  background-color: #3b60e4;
+}
+
+.bg-sun {
+  background-color: #ff6584;
+}
+
+.okay-btn-bg-color {
+  background-color: #7765e3;
+}
+
+.header-shape {
+  clip-path: ellipse(60% 38% at 50% 14%);
+}
+
+.main-page-header-shape {
+  clip-path: ellipse(75% 61% at 45% 17%);
+}
