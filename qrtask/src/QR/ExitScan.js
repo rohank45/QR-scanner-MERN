@@ -3,31 +3,13 @@ import login from "../images/login.png";
 import LogEntryScanHead from "../images/LogEntryScanHead.png";
 import axios from "axios";
 import { useHistory, useLocation } from "react-router-dom";
+import QrReader from "react-qr-reader";
+import { toast } from "react-toastify";
 
 const ExitScan = () => {
   const history = useHistory();
   const location = useLocation();
   const userData = location.state.user;
-
-  const addExit = async () => {
-    try {
-      await axios.post("/exit", {
-        mobile_number: userData.mobile_number,
-        tokenId: Math.random().toString(16).slice(2),
-        user_name: userData.name,
-        society_name: userData.society,
-        exit: "exit",
-        time: new Date().toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
-      });
-
-      history.push("/after/exit");
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <div>
@@ -47,8 +29,37 @@ const ExitScan = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center" onClick={addExit}>
-        open camera
+      <div className="-mt-20">
+        <div className="mx-10">
+          <QrReader
+            delay={300}
+            onScan={async (res) => {
+              if (res === "exit") {
+                await axios.post("/exit", {
+                  mobile_number: userData.mobile_number,
+                  tokenId: Math.random().toString(16).slice(2),
+                  user_name: userData.name,
+                  society_name: userData.society,
+                  exit: res,
+                  time: new Date().toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  }),
+                });
+
+                history.push("/after/exit");
+              } else {
+                toast.error("Invalid QR", {
+                  position: toast.POSITION.TOP_CENTER,
+                  autoClose: 3000,
+                });
+                window.location.reload(false);
+              }
+            }}
+            onError={(error) => console.log(error)}
+            legacyMode
+          />
+        </div>
       </div>
     </div>
   );

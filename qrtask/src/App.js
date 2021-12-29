@@ -13,6 +13,7 @@ import ErrorPage from "./components/ErrorPage";
 import AuthPage from "./auth/AuthPage";
 import EntryScan from "./QR/EntryScan";
 import ExitScan from "./QR/ExitScan";
+import GenerateQR from "./QR/GenerateQR";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/login" component={Login} exact />
           <Route path="/verify" component={Verification} exact />
 
+          <Route path="/generate/qrcode" component={GenerateQR} exact />
           <Route path="*" component={ErrorPage} />
         </Switch>
       </BrowserRouter>

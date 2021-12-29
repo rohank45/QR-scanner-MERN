@@ -7,7 +7,7 @@ import register from "../images/register.png";
 const Register = () => {
   const history = useHistory();
 
-  const [society, setSociety] = useState("");
+  const [society, setSociety] = useState("Oberoi Esquire");
   const [mobileNumber, setMobileNumber] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -93,14 +93,19 @@ const Register = () => {
           className="py-3 px-4 rounded-lg border border-blue-700 outline-none"
         />
 
-        <select
-          value=""
+        {/* <select
+          value={society}
           onChange={(e) => setSociety(e.target.value)}
           className="py-3 px-4 rounded-lg border border-blue-700 outline-none"
         >
           <option value="Oberoi Esquire">Oberoi Esquire</option>
+          <option value="Kalpataru Estate">Kalpataru Estate</option>
           <option value="Oberoi Splendor">Oberoi Splendor</option>
-        </select>
+        </select> */}
+
+        <label className="py-3 px-4 rounded-lg border border-blue-700 outline-none">
+          Oberoi Esquire
+        </label>
 
         <input
           type="password"
