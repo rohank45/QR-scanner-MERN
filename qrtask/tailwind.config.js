@@ -11,6 +11,7 @@ module.exports = {
       },
       fontFamily: {
         nunito: ["nunito", "sans-serif"],
+        Metrophobic: ["Metrophobic", "sans-serif"],
       },
     },
   },

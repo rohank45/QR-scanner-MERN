@@ -6,7 +6,7 @@ import authPageSUN from "../images/authPageSUN.png";
 const AuthPage = () => {
   return (
     <div>
-      <div className="bg-blue-color header-shape px-10 pt-5 h-72 flex justify-between text-white text-3xl tracking-wide">
+      <div className="bg-blue-color header-shape px-10 pt-5 h-72 flex justify-between text-white text-3xl">
         <div>
           <p>Simplify</p>
           <p>Entry</p>
@@ -37,7 +37,7 @@ const AuthPage = () => {
         </Link>
       </div>
 
-      <p className="text-blue-color mx-5 text-lg">
+      <p className="text-blue-color mx-8 text-lg tracking-tight">
         Designed and developed by SimplifyTech.in
       </p>
     </div>

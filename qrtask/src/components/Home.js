@@ -21,7 +21,7 @@ const Home = () => {
         </Link>
       ) : (
         <Link to="/auth">
-          <div className="flex flex-col z-50 absolute top-44 left-6 text-6xl text-white font-semibold">
+          <div className="flex flex-col z-50 absolute top-44 left-6 text-6xl text-white">
             <p>Simplify</p>
             <p>Entry</p>
           </div>

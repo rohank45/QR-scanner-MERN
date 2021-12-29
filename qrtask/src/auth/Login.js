@@ -61,7 +61,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="bg-blue-color header-shape px-12 pt-5 h-72 flex justify-between text-white text-3xl tracking-wide shadow-2xl">
+      <div className="bg-blue-color header-shape px-12 pt-5 h-72 flex justify-between text-white text-3xl shadow-2xl">
         <div>
           <p>Simplify</p>
           <p>Entry</p>
@@ -103,7 +103,7 @@ const Login = () => {
         </button>
       </form>
 
-      <p className="text-blue-color mx-5 text-lg my-20">
+      <p className="text-blue-color mx-5 text-lg my-20 tracking-tight">
         Designed and developed by SimplifyTech.in
       </p>
     </div>

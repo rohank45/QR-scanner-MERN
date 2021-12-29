@@ -62,7 +62,7 @@ const Register = () => {
 
   return (
     <div>
-      <div className="bg-blue-color header-shape px-12 pt-5 h-72 flex justify-between text-white text-3xl tracking-wide shadow-2xl">
+      <div className="bg-blue-color header-shape px-12 pt-5 h-72 flex justify-between text-white text-3xl shadow-2xl">
         <p className="mt-5">Register</p>
 
         <div className="w-28 py-3">

@@ -32,7 +32,7 @@ const MainPage = () => {
   const logout = async () => {
     await axios.get("/logout");
 
-    history.push("/login");
+    history.push("/");
 
     toast.success("Logout success", {
       position: toast.POSITION.TOP_CENTER,
@@ -96,7 +96,7 @@ const MainPage = () => {
         </div>
       </div>
 
-      <p className="text-blue-color mx-5 text-lg fixed bottom-10">
+      <p className="text-blue-color mx-8 text-lg fixed bottom-10 tracking-tight">
         Designed and developed by SimplifyTech.in
       </p>
     </div>

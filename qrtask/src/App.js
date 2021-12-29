@@ -17,7 +17,7 @@ import GenerateQR from "./QR/GenerateQR";
 
 const App = () => {
   return (
-    <div className="font-nunito">
+    <div className="font-Metrophobic">
       <BrowserRouter>
         <Switch>
           <Route path="/" component={Home} exact />

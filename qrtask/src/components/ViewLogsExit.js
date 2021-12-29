@@ -23,7 +23,7 @@ const ViewLogsExit = () => {
                 <p>{society_name}</p>
               </div>
 
-              <p className="text-gray-500">{time}</p>
+              <p className="text-gray-500 font-medium">{time}</p>
             </div>
           </div>
         ) : (
