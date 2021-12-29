@@ -7,6 +7,14 @@ const ViewLogs = () => {
 
   useEffect(() => setUserData(location.state.user.log), []);
 
+  if (userData.length === 0) {
+    return (
+      <div className="flex justify-center items-center pt-40">
+        <p>No Logs Available</p>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-gray-50 h-screen text-black">
       {userData?.map((val, id) => {

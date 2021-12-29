@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import login from "../images/login.png";
 import LogEntryScanHead from "../images/LogEntryScanHead.png";
 import axios from "axios";
@@ -10,6 +10,35 @@ const ExitScan = () => {
   const history = useHistory();
   const location = useLocation();
   const userData = location.state.user;
+  const qrCodeRef = useRef("");
+
+  const onScanFile = () => {
+    qrCodeRef.current.openImageDialog();
+  };
+
+  const onScan = async (res) => {
+    if (res === "exit") {
+      await axios.post("/exit", {
+        mobile_number: userData.mobile_number,
+        tokenId: Math.random().toString(16).slice(2),
+        user_name: userData.name,
+        society_name: userData.society,
+        exit: res,
+        time: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      });
+
+      history.push("/after/exit");
+    } else {
+      toast.error("Invalid QR", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 3000,
+      });
+      window.location.reload(false);
+    }
+  };
 
   return (
     <div>
@@ -33,31 +62,30 @@ const ExitScan = () => {
         <div className="mx-10">
           <QrReader
             delay={300}
-            onScan={async (res) => {
-              if (res === "exit") {
-                await axios.post("/exit", {
-                  mobile_number: userData.mobile_number,
-                  tokenId: Math.random().toString(16).slice(2),
-                  user_name: userData.name,
-                  society_name: userData.society,
-                  exit: res,
-                  time: new Date().toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  }),
-                });
-
-                history.push("/after/exit");
-              } else {
-                toast.error("Invalid QR", {
-                  position: toast.POSITION.TOP_CENTER,
-                  autoClose: 3000,
-                });
-                window.location.reload(false);
-              }
-            }}
+            onScan={onScan}
             onError={(error) => console.log(error)}
             legacyMode
+          />
+        </div>
+      </div>
+
+      <p className="my-10 text-lg text-center">or</p>
+
+      <div className="flex flex-col gap-10 items-center justify-center mb-20">
+        <button
+          className="p-2 bg-blue-700 text-white rounded-md shadow-lg mx-16"
+          onClick={onScanFile}
+        >
+          scan QR code
+        </button>
+
+        <div className="m-20">
+          <QrReader
+            ref={qrCodeRef}
+            delay={300}
+            onError={(error) => console.log(error)}
+            legacyMode
+            onScan={onScan}
           />
         </div>
       </div>
