@@ -28,7 +28,7 @@ const Verification = () => {
         mobile_number: location.state.mobile_number,
       });
 
-      toast.success("OTP resended please check sms", {
+      toast.success("OTP resent please check sms", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 3000,
       });
