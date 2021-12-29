@@ -20,12 +20,12 @@ const App = () => {
       <BrowserRouter>
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/after/entry" component={AfterEntry} exact />
-          <Route path="/after/exit" component={AfterExit} exact />
           <Route path="/mainpage" component={MainPage} exact />
-          <Route path="/view/logs" component={ViewLogs} exact />
           <Route path="/scan/entry" component={EntryScan} exact />
           <Route path="/scan/exit" component={ExitScan} exact />
+          <Route path="/after/entry" component={AfterEntry} exact />
+          <Route path="/after/exit" component={AfterExit} exact />
+          <Route path="/view/logs" component={ViewLogs} exact />
 
           <Route path="/auth" component={AuthPage} exact />
           <Route path="/register" component={Register} exact />

@@ -1,8 +1,34 @@
 import React from "react";
 import login from "../images/login.png";
 import LogEntryScanHead from "../images/LogEntryScanHead.png";
+import axios from "axios";
+import { useHistory, useLocation } from "react-router-dom";
 
 const EntryScan = () => {
+  const history = useHistory();
+  const location = useLocation();
+  const userData = location.state.user;
+
+  const addEntry = async () => {
+    try {
+      await axios.post("/entry", {
+        mobile_number: userData.mobile_number,
+        tokenId: Math.random().toString(16).slice(2),
+        user_name: userData.name,
+        society_name: userData.society,
+        entry: "entry",
+        time: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      });
+
+      history.push("/after/entry");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <div className="bg-blue-color header-shape px-8 pt-2 h-72 shadow-2xl">
@@ -21,7 +47,9 @@ const EntryScan = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center">open camera</div>
+      <div className="flex justify-center items-center" onClick={addEntry}>
+        open camera
+      </div>
     </div>
   );
 };

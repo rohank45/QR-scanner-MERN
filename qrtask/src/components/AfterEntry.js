@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AfterEntry = () => {
   return (
@@ -12,9 +13,12 @@ const AfterEntry = () => {
         <span>to Oberoi Esquire</span>
       </p>
 
-      <button className="py-3 font-bold mx-16 my-20 text-lg rounded-lg text-white okay-btn-bg-color shadow-2xl">
+      <Link
+        to="/mainpage"
+        className="py-3 font-bold mx-16 my-20 text-lg rounded-lg text-white okay-btn-bg-color shadow-2xl"
+      >
         OKAY
-      </button>
+      </Link>
     </div>
   );
 };

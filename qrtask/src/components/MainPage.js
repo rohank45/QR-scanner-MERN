@@ -55,7 +55,10 @@ const MainPage = () => {
 
       <div className="flex flex-wrap justify-between items-center text-white mx-12 gap-10 fixed top-48">
         <Link
-          to="/scan/entry"
+          to={{
+            pathname: "/scan/entry",
+            state: { user },
+          }}
           className="okay-btn-bg-color w-28 h-28 rounded-md shadow-2xl flex flex-col justify-center items-center gap-1"
         >
           <img src={LogEntry} alt="a" className="w-10" />
@@ -63,7 +66,10 @@ const MainPage = () => {
         </Link>
 
         <Link
-          to="/scan/exit"
+          to={{
+            pathname: "/scan/exit",
+            state: { user },
+          }}
           className="okay-btn-bg-color w-28 h-28 rounded-md shadow-2xl flex flex-col justify-center items-center gap-1"
         >
           <img src={LogExit} alt="b" className="w-10" />
@@ -71,7 +77,10 @@ const MainPage = () => {
         </Link>
 
         <Link
-          to="/view/logs"
+          to={{
+            pathname: "/view/logs",
+            state: { user },
+          }}
           className="okay-btn-bg-color w-28 h-28 rounded-md shadow-2xl flex flex-col justify-center items-center gap-1"
         >
           <img src={viewLog} alt="c" className="w-10" />

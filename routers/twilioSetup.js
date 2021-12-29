@@ -19,6 +19,7 @@ router.post("/send/otp", async (req, res) => {
   const loginUser = await User.findOne({
     mobile_number: req.body.mobile_number,
   });
+
   loginUser.otp = req.body.otp;
   await loginUser.save({ validateBeforeSave: false });
 

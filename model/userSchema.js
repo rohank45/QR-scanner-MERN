@@ -22,6 +22,25 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "USER",
   },
+  log: [
+    {
+      tokenId: {
+        type: String,
+      },
+      user_name: {
+        type: String,
+      },
+      society_name: {
+        type: String,
+      },
+      entry: {
+        type: String,
+      },
+      time: {
+        type: String,
+      },
+    },
+  ],
   createdAt: {
     type: Date,
     immutable: true,

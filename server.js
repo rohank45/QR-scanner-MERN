@@ -29,6 +29,12 @@ app.use("/", profile);
 const twilioSetup = require("./routers/twilioSetup");
 app.use("/", twilioSetup);
 
+const entry = require("./routers/entryRoute/entry");
+app.use("/", entry);
+
+const exit = require("./routers/entryRoute/exit");
+app.use("/", exit);
+
 // ----------------- production --------------------------
 // const path = require("path");
 
