@@ -11,7 +11,7 @@ router.post("/send/otp", async (req, res) => {
     .create({
       body: `Here is your verification OTP code ${req.body.otp}.`,
       from: "(762) 246-0992",
-      to: "+91 75066 31677",
+      to: "+91 75066",
     })
     .then((message) => console.log(message.sid))
     .catch((err) => console.log(err));
